@@ -1,0 +1,84 @@
+header {
+    background-color: #772CE8;
+    color: white;
+    font-family: 'Roboto Mono', monospace;;
+}
+
+nav {
+    background-color: rgb(146, 152, 158);
+    text-align: left;
+}
+
+nav a {
+    padding-right: 30px;
+    padding-left: 15px;
+}
+
+a:link {
+    font-size: x-large;
+    color: white;
+    text-decoration: none
+}
+  
+/* visited link */
+a:visited {
+    color: rgb(2, 2, 3);
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: red;
+    text-decoration: none
+}
+
+/* selected link */
+a:active {
+    color: blue;
+    text-decoration: none
+}
+
+article {
+    background-color: aliceblue;
+    font-family: 'Roboto Mono', monospace;
+    margin-bottom: 15px;
+    padding-top: 5px;
+}
+
+article a {
+    color: black;
+    font-size: larger;
+    padding-left: 15px;
+}
+
+article a:link {
+    color: black;
+    text-decoration: none
+}
+  
+/* visited link */
+article a:visited {
+    color: rgb(2, 2, 3);
+    text-decoration: none;
+}
+
+/* mouse over link */
+article a:hover {
+    color: red;
+    text-decoration: none
+}
+
+/* selected link */
+article a:active {
+    color: blue;
+    text-decoration: none
+}
+
+.infoHolder {
+    display: flex;
+    padding-left: 15px;
+}
+
+.infoHolder p{
+    padding-right: 20px;
+}
