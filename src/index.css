@@ -1,7 +1,15 @@
 header {
     background-color: #772CE8;
     color: white;
-    font-family: 'Roboto Mono', monospace;;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#mainHeader h1 {
+    padding-left: 10px;
+}
+
+#mainHeader h2 {
+    padding-left: 10px;
 }
 
 nav {
