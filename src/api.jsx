@@ -30,7 +30,6 @@ const getComments = (article_id) => {
     console.log(article_id, "getCom ln30")
     return newsApi.get(`/articles/${article_id}/comments`)
     .then((response) => {
-        console.log(response.data.comments, "getCom")
         return response.data.comments
     })
 }
