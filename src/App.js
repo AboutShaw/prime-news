@@ -3,24 +3,19 @@ import { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Homepage from './components/Homepage';
-import Coding from './components/Coding';
-import Football from './components/Football';
-import Cooking from './components/Cooking';
-// import SingleArticle from './components/SingleArticle'
+import SingleTopic from './components/SingleTopic';
+import SingleArticle from "./components/SingleArticle"
 
 function App() {
-  const [topic, setTopic] = useState("");
-
+  const [articles, setArticles] = useState([]);
   return (
     <BrowserRouter>
       <div className="App">
-        <Header setFilter={setTopic}/>
+        <Header />
         <Routes>
-          <Route path="/" element={<Homepage/>} />
-          <Route path="/coding" element={<Coding topic="coding"/>} />
-          <Route path="/football" element={<Football topic="football"/>} />
-          <Route path="/cooking" element={<Cooking topic="cooking"/>} />
-          {/* <Route path="/articles/:article_id" element={<SingleArticle topic={""}/>} /> */}
+          <Route path="/" element={<Homepage articles={articles} setArticles={setArticles}/>} />
+          <Route path="/topics/:topic/articles" element={<SingleTopic articles={articles} setArticles={setArticles}/>} />
+          <Route path="/articles/:article_id" element={<SingleArticle articles={articles} setArticles={setArticles}/>} />
         </Routes>
       </div>
     </BrowserRouter>

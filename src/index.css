@@ -5,11 +5,11 @@ header {
 }
 
 #mainHeader h1 {
-    padding-left: 10px;
+    padding-left: 15px;
 }
 
 #mainHeader h2 {
-    padding-left: 10px;
+    padding-left: 15px;
 }
 
 nav {
@@ -52,6 +52,17 @@ article {
     font-family: 'Roboto Mono', monospace;
     margin-bottom: 15px;
     padding-top: 5px;
+}
+
+article h3 {
+    color: black;
+    font-size: larger;
+    padding-left: 15px;
+}
+
+#singleBody {
+    padding-left: 15px;
+    padding-bottom: 20px;
 }
 
 article a {
@@ -98,15 +109,21 @@ article a:active {
     font-size:small;
     text-align: left;
     padding-left: 15px; 
+    font-family: 'Roboto Mono', monospace;
 }
 
 #sorterContainer p {
     padding-right: 10px;
+    color: white;
 }
 
 #sorterContainer a {
     padding-right: 5px;
     padding-top: 3px;
+}
+#sorterContainer a:hover {
+    color: red;
+    text-decoration: none
 }
 
 #aRight {
@@ -115,4 +132,47 @@ article a:active {
 
 #navSort {
     display: flex;
+    background-color: rgb(146, 152, 158);
+    justify-content: space-between;
+    padding-right: 15px;
+}
+
+#navSort button {
+    background-color: rgb(146, 152, 158);
+    font-family: 'Roboto Mono', monospace;
+    border: none;
+}
+
+#navSort button:hover {
+    color: red;
+    text-decoration: none
+}
+
+#ArtComms {
+    background-color: rgb(146, 152, 158);
+    font-family: 'Roboto Mono', monospace;
+    padding-left: 15px;;
+}
+
+#commentsInfo {
+    display: flex;
+    flex-flow: column;
+    padding-left: 15px;
+}
+
+#articleHolder {
+    padding-left: 15px;
+}
+
+#ArtComms {
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+}
+
+.infoHolderPlus {
+    display: flex;
+}
+
+.infoHolderPlus p {
+    padding-right: 30px;
 }
