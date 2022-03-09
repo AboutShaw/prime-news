@@ -1,11 +1,13 @@
 import React from "react"
-import ArticleDisplay from "./ArticleDisplay"
+import DisplayArticles from "./DisplayArticles"
+import Sorter from "./Sorter"
 
-export default function HomePage({topic}) {
+export default function HomePage({articles, setArticles}) {
 
     return (
         <div id="homepage">
-            <ArticleDisplay topic={topic}/>
+            <Sorter />
+            <DisplayArticles articles={articles} setArticles={setArticles}/>
         </div>
     )
 }

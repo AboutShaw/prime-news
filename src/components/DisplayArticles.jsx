@@ -3,12 +3,17 @@ import ArticleTile from "./ArticleTile"
 import { getArticles } from "../api";
 
 
-  export default function ArticleDisplay({topic}) {
-    const [articles, setArticles] = useState([]);
+  export default function ArticleDisplay({topic, articles, setArticles}) {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
       setIsLoading(true);
+      if(!topic){
+        getArticles().then((articles) => {
+          setArticles(articles);        
+          setIsLoading(false);
+        });
+      }
       getArticles(topic).then((articles) => {
         setArticles(articles);        
         setIsLoading(false);
