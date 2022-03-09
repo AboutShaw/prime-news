@@ -9,8 +9,6 @@ import SingleArticleComments from "./SingleArticleComments";
     const [article, setArticle] = useState({})
     const [comments, setComments] = useState({})
 
-    console.log(article_id, "Art'n'Com")
-
     useEffect(() => {
       setIsLoading(true);
       getArticle(article_id).then((article) => {
@@ -21,8 +19,6 @@ import SingleArticleComments from "./SingleArticleComments";
         setComments(comments);
       })
     }, [article_id]);
-
-    console.log(comments)
 
     if (isLoading) return <p>loading..</p>;
     return (

@@ -11,9 +11,9 @@ const date = moment(created_at).format("MMM Do YY")
         <div className="infoHolder">
           <p>Topic: {topicFormat}</p>
           <p>Author: {author}</p>
+          <p>Submitted: {date}</p>
           <p>Votes: {votes}</p>
           <p>Comments: {comment_count}</p>
-          <p>Submitted: {date}</p>
         </div>
       </article>
     );

@@ -9,6 +9,9 @@ export default function Sorter() {
         <p>Author:</p>
         <Link to="" >↟</Link>
         <Link id="aRight" to="" >↡</Link>
+        <p>Date:</p>
+        <Link to="" >↟</Link>
+        <Link id="aRight" to="" >↡</Link>
         <p>Votes:</p>
         <Link to="" >↟</Link>
         <Link id="aRight" to="" >↡</Link>

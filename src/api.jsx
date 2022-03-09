@@ -35,5 +35,5 @@ const getComments = (article_id) => {
     })
 }
 
-export { newsApi, getArticles, getTopics, getArticle, getComments};
+export { getArticles, getTopics, getArticle, getComments};
 
