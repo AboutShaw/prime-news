@@ -7,7 +7,6 @@ export default function Header() {
 
     useEffect(() => {
         getTopics().then((topicList) => {
-            console.log(topicList.topics, "here")
             setTopics(topicList.topics)
         })
     }, [])
@@ -18,7 +17,7 @@ export default function Header() {
                 <h2>The news you didn't want!</h2>
                 <div id="navSort">
                     <nav id="navBar">
-                        <Link to="/" >Home</Link>
+                        <Link to="/" >HOME</Link>
                         {topics.map((topic) => {
                             return <Link to={`/topics/${topic.slug}/articles`} >{(topic.slug).toUpperCase()}</Link>
                         })}
