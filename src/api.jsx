@@ -4,9 +4,9 @@ const newsApi = axios.create({
     baseURL: 'https://mshaw-nc-news.herokuapp.com/api'
   });
 
-const getArticles = (topic) => { 
-    console.log(topic, "ln8")
-    return newsApi.get(`/articles`, {params: {topic}})
+const getArticles = (topic, sort_by, order_by) => { 
+    console.log(topic, sort_by, order_by, "api")
+    return newsApi.get(`/articles`, {params: {topic, sort_by, order_by}})
         .then((response) => {
             return response.data
         })

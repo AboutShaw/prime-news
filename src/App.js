@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
@@ -8,6 +8,7 @@ import SingleArticle from "./components/SingleArticle"
 
 function App() {
   const [articles, setArticles] = useState([]);
+
   return (
     <BrowserRouter>
       <div className="App">
