@@ -22,7 +22,7 @@ export default function Header() {
                 </div>
                 <div id="userProfile">
                     <img src={PMB} alt="PepperMint Butler" />
-                    <h4>lurker</h4>
+                    <h4>weegembump</h4>
                     <button>Logout</button>
                 </div>
             </div>

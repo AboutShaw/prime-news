@@ -2,6 +2,7 @@ header {
     background-color: #772CE8;
     color: white;
     font-family: 'Roboto Mono', monospace;
+    justify-content: space-between;
 }
 
 #mainHeader h1 {
@@ -183,13 +184,16 @@ article a:active {
 }
 
 #userProfile {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     border: solid;
     background-color: aliceblue;
     color: black;
     padding: 10px;
+    margin-bottom: 5px;
 }
 
 #userProfile img {
     height: 50px;
+    width: 50px;
 }
