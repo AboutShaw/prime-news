@@ -176,3 +176,20 @@ article a:active {
 .infoHolderPlus p {
     padding-right: 30px;
 }
+
+#headerTop {
+    display: flex;
+    justify-content: space-between;
+}
+
+#userProfile {
+    display: grid;
+    border: solid;
+    background-color: aliceblue;
+    color: black;
+    padding: 10px;
+}
+
+#userProfile img {
+    height: 50px;
+}
