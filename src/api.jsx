@@ -32,7 +32,6 @@ const getComments = (article_id) => {
 };
 
 const updateVotes = (article_id, inc_votes) => {
-  console.log(article_id, inc_votes);
   return newsApi
     .patch(`/articles/${article_id}`, { inc_votes: inc_votes })
     .then((response) => {
