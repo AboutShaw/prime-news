@@ -83,6 +83,7 @@ export default function ArticleAndComments({ article_id }) {
           <div id="commentsWrap">
             <SingleArticleComments
               key={comment_id}
+              comment_id={comment_id}
               votes={votes}
               created_at={created_at}
               author={author}

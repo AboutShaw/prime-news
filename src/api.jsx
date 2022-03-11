@@ -45,6 +45,12 @@ const postComment = (article_id, body) => {
   });
 };
 
+const deleteComment = (comment_id) => {
+  return newsApi.delete(`/comments/${comment_id}`).then((response) => {
+    return response.data.comments;
+  });
+};
+
 export {
   getArticles,
   getTopics,
@@ -52,4 +58,5 @@ export {
   getComments,
   postComment,
   updateVotes,
+  deleteComment,
 };

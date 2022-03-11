@@ -194,6 +194,10 @@ article a:active {
   padding-right: 30px;
 }
 
+.infoHolderPlus button {
+  margin-top: 15px;
+}
+
 #headerTop {
   display: flex;
   justify-content: space-between;
