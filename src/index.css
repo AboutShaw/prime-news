@@ -153,17 +153,17 @@ article a:active {
   background-color: rgb(146, 152, 158);
   font-family: "Roboto Mono", monospace;
   padding-left: 15px;
-    background-color: rgb(146, 152, 158);
-    font-family: 'Roboto Mono', monospace;
-    padding-left: 15px;
-    margin-bottom: 0px;
-    padding-bottom: 5px;
-    display: flex;
-    justify-content: space-between;
+  background-color: rgb(146, 152, 158);
+  font-family: "Roboto Mono", monospace;
+  padding-left: 15px;
+  margin-bottom: 0px;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
 #ArtComms button {
-    margin: 10px;
+  margin: 10px;
 }
 
 #commentsInfo {
@@ -223,12 +223,14 @@ article a:active {
   margin-right: 10px;
   margin-left: 10px;
 }
-    height: 50px;
-    width: 50px;
+
+#userProfile image {
+  height: 50px;
+  width: 50px;
 }
 
 #ArtComms textarea {
-    width: 85%;
-    height: 100px;
-    vertical-align: top;
+  width: 85%;
+  height: 100px;
+  vertical-align: top;
 }

@@ -1,6 +1,7 @@
 import moment from "moment";
 import { Link } from "react-router-dom";
-import { updateVotes } from "../api";
+import { useState } from "react";
+import Voter from "./Voter";
 export default function ArticleCard({
   article_id,
   title,
@@ -9,10 +10,10 @@ export default function ArticleCard({
   created_at,
   votes,
   comment_count,
-  setVoteUp,
 }) {
   const topicFormat = topic.toUpperCase();
   const date = moment(created_at).format("MMM Do YY");
+  const [voteUp, setVoteUp] = useState(0);
 
   return (
     <article id={article_id}>
@@ -22,12 +23,12 @@ export default function ArticleCard({
         <p>Author: {author}</p>
         <p>Submitted: {date}</p>
         <p>Comments: {comment_count}</p>
-        <p>
-          Votes:
-          <button onClick={() => setVoteUp(1)}>↟1↟</button>
-          {votes}
-          <button onClick={() => setVoteUp(-1)}>↡1↡</button>
-        </p>
+        <Voter
+          voteUp={voteUp}
+          setVoteUp={setVoteUp}
+          article_id={article_id}
+          votes={votes}
+        />
       </div>
     </article>
   );

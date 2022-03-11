@@ -39,8 +39,6 @@ const updateVotes = (article_id, inc_votes) => {
       return response.data.article;
     });
 };
-
-export { getArticles, getTopics, getArticle, getComments, updateVotes };
 const postComment = (article_id, body) => {
   return newsApi.post(`/articles/${article_id}/comments`, {
     username: "jessjelly",
@@ -48,4 +46,11 @@ const postComment = (article_id, body) => {
   });
 };
 
-export { getArticles, getTopics, getArticle, getComments, postComment };
+export {
+  getArticles,
+  getTopics,
+  getArticle,
+  getComments,
+  postComment,
+  updateVotes,
+};

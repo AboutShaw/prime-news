@@ -1,3 +1,7 @@
+import Voter from "./Voter";
+import moment from "moment";
+import { useState } from "react";
+
 export default function SingleArticleTile({
   article_id,
   title,
@@ -6,10 +10,10 @@ export default function SingleArticleTile({
   body,
   created_at,
   votes,
-  comment_count,
-  setVoteUp,
 }) {
   const topicFormat = topic.toUpperCase();
+  const date = moment(created_at).format("MMM Do YY");
+  const [voteUp, setVoteUp] = useState(0);
 
   return (
     <article id={article_id}>
@@ -17,12 +21,13 @@ export default function SingleArticleTile({
       <div id="articleHolder">
         <p>Topic: {topicFormat}</p>
         <p>Author: {author}</p>
-        <p>
-          Votes:
-          <button onclick={() => setVoteUp("1")}>↟1↟</button>
-          {votes}
-          <button onclick={() => setVoteUp("-1")}>↡1↡</button>
-        </p>
+        <p>Submitted: {date}</p>
+        <Voter
+          voteUp={voteUp}
+          setVoteUp={setVoteUp}
+          article_id={article_id}
+          votes={votes}
+        />
       </div>
       <p id="singleBody">{body}</p>
     </article>

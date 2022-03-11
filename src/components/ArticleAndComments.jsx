@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import SingleArticleTile from "./SingleArticleTile";
-import { getArticle, getComments, postComment, updateVotes } from "../api";
+import { getArticle, getComments, postComment } from "../api";
 import SingleArticleComments from "./SingleArticleComments";
 import CommentsPopUp from "./CommentsPopUp";
 
@@ -8,7 +8,6 @@ export default function ArticleAndComments({ article_id }) {
   const [isLoading, setIsLoading] = useState(true);
   const [article, setArticle] = useState({});
   const [comments, setComments] = useState({});
-  const [voteUp, setVoteUp] = useState("");
   const [buttonPopup, setButtonPopup] = useState(false);
   const [commentBody, setCommentBody] = useState("");
 
@@ -21,8 +20,7 @@ export default function ArticleAndComments({ article_id }) {
     getComments(article_id).then((comments) => {
       setComments(comments);
     });
-    updateVotes(article_id, voteUp);
-  }, [article_id, voteUp, buttonPopup]);
+  }, [article_id, buttonPopup]);
 
   if (isLoading) return <p>loading..</p>;
   return (
@@ -37,7 +35,6 @@ export default function ArticleAndComments({ article_id }) {
         created_at={article.created_at}
         votes={article.votes}
         comment_count={article.comment_count}
-        setVoteUp={setVoteUp}
       />
 
       <h3 id="ArtComms">Comments: {comments.length}</h3>
@@ -51,7 +48,10 @@ export default function ArticleAndComments({ article_id }) {
               author={author}
               body={body}
             />
-      />
+          </div>
+        );
+      })}
+
       <div id="ArtComms">
         <h3>Comments</h3>
         <button onClick={() => setButtonPopup(true)}>What You Sayin</button>

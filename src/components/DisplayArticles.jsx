@@ -5,7 +5,6 @@ import { useParams, useSearchParams } from "react-router-dom";
 
 export default function ArticleDisplay({ articles, setArticles }) {
   const [isLoading, setIsLoading] = useState(true);
-  const [voteUp, setVoteUp] = useState([]);
 
   const { topic } = useParams();
   const [searchParams] = useSearchParams();
