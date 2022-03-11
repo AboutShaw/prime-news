@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import DisplayArticles from "./DisplayArticles"
 import Sorter from "./Sorter";
 
