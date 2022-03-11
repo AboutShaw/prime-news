@@ -36,6 +36,22 @@ export default function ArticleAndComments({ article_id }) {
         votes={article.votes}
         comment_count={article.comment_count}
       />
+
+      <h3 id="ArtComms">Comments: {comments.length}</h3>
+      {comments.map(({ comment_id, votes, created_at, author, body }) => {
+        return (
+          <div id="commentsWrap">
+            <SingleArticleComments
+              key={comment_id}
+              votes={votes}
+              created_at={created_at}
+              author={author}
+              body={body}
+            />
+          </div>
+        );
+      })}
+
       <div id="ArtComms">
         <h3>Comments</h3>
         <button onClick={() => setButtonPopup(true)}>What You Sayin</button>

@@ -31,6 +31,13 @@ const getComments = (article_id) => {
   });
 };
 
+const updateVotes = (article_id, inc_votes) => {
+  return newsApi
+    .patch(`/articles/${article_id}`, { inc_votes: inc_votes })
+    .then((response) => {
+      return response.data.article;
+    });
+};
 const postComment = (article_id, body) => {
   return newsApi.post(`/articles/${article_id}/comments`, {
     username: "jessjelly",
@@ -38,4 +45,11 @@ const postComment = (article_id, body) => {
   });
 };
 
-export { getArticles, getTopics, getArticle, getComments, postComment };
+export {
+  getArticles,
+  getTopics,
+  getArticle,
+  getComments,
+  postComment,
+  updateVotes,
+};
