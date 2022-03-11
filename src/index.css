@@ -152,7 +152,15 @@ article a:active {
 #ArtComms {
     background-color: rgb(146, 152, 158);
     font-family: 'Roboto Mono', monospace;
-    padding-left: 15px;;
+    padding-left: 15px;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#ArtComms button {
+    margin: 10px;
 }
 
 #commentsInfo {
@@ -163,11 +171,6 @@ article a:active {
 
 #articleHolder {
     padding-left: 15px;
-}
-
-#ArtComms {
-    margin-bottom: 0px;
-    padding-bottom: 5px;
 }
 
 .infoHolderPlus {
@@ -196,4 +199,10 @@ article a:active {
 #userProfile img {
     height: 50px;
     width: 50px;
+}
+
+#ArtComms textarea {
+    width: 85%;
+    height: 100px;
+    vertical-align: top;
 }
