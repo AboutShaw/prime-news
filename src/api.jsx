@@ -41,3 +41,11 @@ const updateVotes = (article_id, inc_votes) => {
 };
 
 export { getArticles, getTopics, getArticle, getComments, updateVotes };
+const postComment = (article_id, body) => {
+  return newsApi.post(`/articles/${article_id}/comments`, {
+    username: "jessjelly",
+    body: body,
+  });
+};
+
+export { getArticles, getTopics, getArticle, getComments, postComment };

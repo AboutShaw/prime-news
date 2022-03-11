@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import SingleArticleTile from "./SingleArticleTile";
-import { getArticle, getComments, updateVotes } from "../api";
+import { getArticle, getComments, postComment, updateVotes } from "../api";
 import SingleArticleComments from "./SingleArticleComments";
+import CommentsPopUp from "./CommentsPopUp";
 
 export default function ArticleAndComments({ article_id }) {
   const [isLoading, setIsLoading] = useState(true);
   const [article, setArticle] = useState({});
   const [comments, setComments] = useState({});
   const [voteUp, setVoteUp] = useState("");
+  const [buttonPopup, setButtonPopup] = useState(false);
+  const [commentBody, setCommentBody] = useState("");
 
   useEffect(() => {
     setIsLoading(true);
@@ -19,7 +22,7 @@ export default function ArticleAndComments({ article_id }) {
       setComments(comments);
     });
     updateVotes(article_id, voteUp);
-  }, [article_id, voteUp]);
+  }, [article_id, voteUp, buttonPopup]);
 
   if (isLoading) return <p>loading..</p>;
   return (
@@ -38,6 +41,43 @@ export default function ArticleAndComments({ article_id }) {
       />
 
       <h3 id="ArtComms">Comments: {comments.length}</h3>
+      {comments.map(({ comment_id, votes, created_at, author, body }) => {
+        return (
+          <div id="commentsWrap">
+            <SingleArticleComments
+              key={comment_id}
+              votes={votes}
+              created_at={created_at}
+              author={author}
+              body={body}
+            />
+      />
+      <div id="ArtComms">
+        <h3>Comments</h3>
+        <button onClick={() => setButtonPopup(true)}>What You Sayin</button>
+        <CommentsPopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
+          <h3>What You Sayin: jessjelly</h3>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              postComment(article_id, commentBody)
+                .then((response) => {
+                  return response.data.comment;
+                })
+                .then(() => setButtonPopup(false));
+            }}
+          >
+            <h4>Empty your mind (↡below↡)</h4>
+            <textarea
+              type="text"
+              value={commentBody}
+              onChange={(e) => setCommentBody(e.target.value)}
+            />
+            <button>Submit</button>
+          </form>
+        </CommentsPopUp>
+      </div>
+
       {comments.map(({ comment_id, votes, created_at, author, body }) => {
         return (
           <div id="commentsWrap">
